@@ -14,8 +14,6 @@ config :chat, Chat.Endpoint,
   pubsub: [name: Chat.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
-config :chat, :ecto_repos, [Chat.Repo]
-
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

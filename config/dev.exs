@@ -11,7 +11,8 @@ config :chat, Chat.Endpoint,
   debug_errors: true,
   cache_static_lookup: false,
   code_reloader: true,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+           cd: Path.expand("../", __DIR__)]]
 
 # Watch static and templates for browser reloading.
 config :chat, Chat.Endpoint,
@@ -25,10 +26,3 @@ config :chat, Chat.Endpoint,
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
-
-# Configure your database
-config :chat, Chat.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "chat_dev"
